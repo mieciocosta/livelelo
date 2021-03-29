@@ -20,7 +20,6 @@ jobs:
       run: |
         gem install bundler --no-document
         bundle install
-    steps:
     - name: Project Checkout
       uses: actions/checkout@v2
     - name: Node.js setup
