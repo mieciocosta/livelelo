@@ -7,15 +7,16 @@ jobs:
     name: build (${{ matrix.ruby }} / ${{ matrix.os }})
     strategy:
       matrix:
-        ruby: [ 2.5, 2.4, head ]
-        os: [ ubuntu-latest]
+        ruby: [ 2.7, 2.6, 2.5, 2.4, head ]
+        os: [ ubuntu-latest, macos-latest ]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@master
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Project Checkout
+      uses: actions/checkout@v2
     - name: Node.js setup
       uses: actions/setup-node@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v2
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Install dependencies
@@ -24,4 +25,4 @@ jobs:
         bundle install
         npm ci
     - name: Run test
-      run: bundle exec cucumber
+      run: rake test
