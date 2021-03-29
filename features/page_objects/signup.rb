@@ -23,7 +23,7 @@ class Cadastro
     find(@elem_first_name).send_keys 'Miecio'
     find(@elem_family_name).send_keys 'Costa'
     find(@elem_email).send_keys 'teste@gmail.com'
-    find(@elem_phone).send_keys ''
+    find(@elem_phone).send_keys '998899889988'
     find(@elem_password).send_keys '123456789'
     find(@elem_bt_signup).click
     sleep(5.0)
