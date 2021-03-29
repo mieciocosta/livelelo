@@ -11,6 +11,10 @@ jobs:
         os: [ ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
+     - name: Node.js setup
+        uses: actions/setup-node@v2
+      - name: Instalations for dependencies
+        run: npm ci
     - uses: actions/checkout@master
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -20,9 +24,5 @@ jobs:
       run: |
         gem install bundler --no-document
         bundle install
-     - name: Node.js setup
-        uses: actions/setup-node@v2
-      - name: Instalations for dependencies
-        run: npm ci
     - name: Run test
       run: bundle exec cucumber
