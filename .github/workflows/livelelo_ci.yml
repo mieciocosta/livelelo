@@ -11,13 +11,12 @@ jobs:
         os: [ ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-     - name: Node.js setup
-        uses: actions/setup-node@v2
-      - name: Instalations for dependencies
-        run: npm ci
-    - uses: actions/checkout@master
+    - name: Project Checkout
+      uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
+    - name: Node.js setup
+      uses: actions/setup-node@v2
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Install dependencies
