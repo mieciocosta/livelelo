@@ -1,0 +1,21 @@
+{
+  "name": "livelelo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "appium --avd Nexus",
+    "test": "bundle exec cucumber"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mieciocosta/livelelo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mieciocosta/livelelo/issues"
+  },
+  "homepage": "https://github.com/mieciocosta/livelelo#readme"
+}
