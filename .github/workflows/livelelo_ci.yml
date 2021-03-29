@@ -20,5 +20,12 @@ jobs:
       run: |
         gem install bundler --no-document
         bundle install
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v2
+      - name: Node.js setup
+        uses: actions/setup-node@v2
+      - name: Instalations for dependencies
+        run: npm ci
     - name: Run test
-      run: rake test
+      run: bundle exec cucumber
