@@ -1,28 +1,21 @@
-name: livelelo_ci
-
+name: My workflow
 on: [push]
-
 jobs:
-  build:
-    name: build (${{ matrix.ruby }} / ${{ matrix.os }})
+  test:
     strategy:
+      fail-fast: false
       matrix:
-        ruby: [ 2.7, 2.6, 2.5, 2.4, head ]
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ubuntu-latest]
+        ruby: [2.5, 2.6, 2.7, '3.0', head, jruby, jruby-head, truffleruby, truffleruby-head]
     runs-on: ${{ matrix.os }}
     steps:
-    - name: Project Checkout
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
     - name: Node.js setup
       uses: actions/setup-node@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v2
+    - name: Instalations for dependencies
+      run: npm ci
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Install dependencies
-      run: |
-        gem install bundler --no-document
-        bundle install
-        npm ci
-    - name: Run test
-      run: rake test
+        bundler-cache: true
+    - run: bundle exec rake
