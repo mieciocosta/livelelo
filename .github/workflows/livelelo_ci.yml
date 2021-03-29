@@ -14,14 +14,11 @@ jobs:
     - uses: actions/checkout@master
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
-    - name: Node.js setup
-      uses: actions/setup-node@v2
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Install dependencies
       run: |
         gem install bundler --no-document
         bundle install
-        npm ci
     - name: Run test
       run: rake test
