@@ -1,22 +1,22 @@
 # language: pt
 
-Funcionalidade Cadastro
+## Funcionalidade Cadastro
     Tem como objetivo acessar a tela de cadastro do app
 
-Cenário: Como um novo usuário , irei preencher os dados no app do ifood
+## Cenário: Como um novo usuário , irei preencher os dados no app do ifood
     Dado que estou na tela de Cadastro
     Quando informar nome, e-mail, telefone e senha com no mínimo 8 dígitos
     E clicar no botão de SignUp
     Então devo ser direcionado para tela de Login
 
-Cenário: Como um cadastro de senha inválida, devo visualizar uma mensagem de erro e continuar na página de Cadastro
+## Cenário: Como um cadastro de senha inválida, devo visualizar uma mensagem de erro e continuar na página de Cadastro
     Dado que estou na tela de Cadastro
     Quando informar nome, e-mail, telefone e senha com 1 dígito
     E clicar no botão login
     Então devo ver uma mensagem de erro em que a senha deve conter no mínimo 8 dígitos
     E devo estar na tela de Cadastro
 
-Cenário: Como um cadastro de e-mail inválido, devo visualizar uma mensagem de erro e continuar na página de Cadastro
+## Cenário: Como um cadastro de e-mail inválido, devo visualizar uma mensagem de erro e continuar na página de Cadastro
     Dado que estou na tela de Cadastro
     Quando informar nome, e-mail sem o @, telefone e senha com 8 dígitos
     E clicar no botão login
