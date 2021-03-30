@@ -10,6 +10,6 @@ Projeto de automação do app ifood
     - Instalação Ruby (sudo apt-get install ruby-full)<br>
     - Instalação do Appium seguinto essa orientação (https://confusedcoders.com/general-programming/mobile/how-to-install-appium-in-ubuntu)<br>
     - Estrutura de diretórios do projeto<br>
-    - Para o desafio de "Avaliação para teste funcional", encontra-se no diretório. Features >> specification >> valida_cadastro.feature
+    - Para o desafio de "Avaliação para teste funcional", encontra-se no diretório. Features >> specification >> valida_cadastro
    
 </details>
