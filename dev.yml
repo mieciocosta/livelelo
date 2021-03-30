@@ -1,0 +1,12 @@
+name: ruby_dev
+
+type: ruby
+
+up:
+  - homebrew:
+  - ruby: 2.7
+  - bundler
+
+commands:
+  test:
+    run: bundle exec cucumber

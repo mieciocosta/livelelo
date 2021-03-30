@@ -26,5 +26,7 @@ jobs:
       uses: actions/setup-node@v2
     - name: Instalations for dependencies
       run: npm ci
-    - name: Run test
+    - name: Run Appium
+      run: appium --avd Nexus
+    - name: Run Test
       run: bundle exec cucumber
