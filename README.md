@@ -1,6 +1,6 @@
 # livelelo
 Desafio livelelo
-# Garcia
+# Livelelo
 Projeto de automação do app ifood 
 
 <details>
